@@ -12,6 +12,8 @@ comparison) benchmarked on an NVIDIA T4.
 - **20 classes**, 10,000 images (500/class): Black Beans, Kidney Beans, Chickpeas, Chana, Turkish Gram, and other visually similar bean/lentil/gram varieties.
 - Split **80/20 (train/eval), stratified** — 8,000 train / 2,000 eval images.
 
+![Lentils Classes](assets/lentils_types.png)
+
 ## Methodology notes
 
 An early version of this project evaluated on the same images used for training
@@ -147,7 +149,9 @@ them directly, keeping the app repo itself small.
 Real-world testing against the deployed demo surfaced a meaningful **generalization
 gap** that the held-out eval accuracy (99.9%) does not capture: photos taken on a
 phone, in ordinary kitchen conditions, are frequently misclassified — e.g. urad
-dal consistently predicted as `Husked_RedLentil`, and moong dal as urad dal.
+dal consistently predicted as `Husked_RedLentil`, and [moong dal as urad dal](https://silversur4-instant-gram.hf.space/?__theme=system&deep_link=JR0OvSyqDBs).
+
+![Urad Dal Misclassified](assets/urad_dal_prediction.png)
 
 **Why this happens despite the high eval accuracy:** every image in this dataset —
 training *and* eval — comes from the same controlled photo shoot (same lighting,
